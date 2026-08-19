@@ -1,20 +1,14 @@
-# Homework
-# Data Structures and Algorithms II - Course Portfolio
+# 📝 Homework Branch - Assignment Log
 
-Welcome to my repository for **Estructura de Datos y Algoritmos II** (Data Structures and Algorithms II), a core course in the **Informatics Engineering** program at **Universidad Autónoma de Occidente (UAO)**. Under the guidance of Professor **Jonathan López Londoño**, this portfolio serves as a centralized log for all my academic assignments, algorithmic challenges, and full-stack software developments.
+Welcome to the **Homework** branch of this repository. This dedicated environment is used exclusively for tracking and submitting home-based assignments and standalone exercises for the **Data Structures and Algorithms II** course at **UAO**.
 
-## 📌 Course Roadmap
-The curriculum bridges advanced algorithmic structures with modern full-stack architectures through six key modules:
-* **JS & React Review:** Advanced JavaScript mechanisms and component bases.
-* **Linear Structures:** Implementation of custom Lists, Stacks, and Queues.
-* **Trees & Heaps:** Hierarchical data handling using Binary Trees, N-ary Trees, and Heaps.
-* **Hash Tables & Tries:** Optimizing data lookup, mapping, and prefix indexing.
-* **Graphs:** Modeling complex networked relations and traversal algorithms.
-* **Full-Stack Architecture:** Integration of real-time messaging, secure databases, and APIs.
+## 🎯 Branch Objectives
+* **Isolate Assignments:** Keep graded home exercises completely separate from the stable production code.
+* **Chronological Tracking:** Maintain a clean, flat list of standalone files or tasks assigned during the semester.
+* **Quick Code Validation:** Allow fast review and testing of independent algorithmic challenges.
 
-## 🛠️ Tech Stack & Architecture
-Projects are built following a multi-tier Full-Stack architecture:
-* **Frontend:** Angular,React, HTML5, CSS3, and modern JavaScript (ES6+).
-* **Backend & Real-Time:** Node.js, REST APIs, and WebSockets via Socket.io.
-* **Database:** MongoDB for persistent document-oriented storage.
-* **Development Tools:** Visual Studio Code, Git, and Postman.
+## 🗂️ Completed Assignments
+All tasks are placed directly in the root of this branch and numbered sequentially for easy tracking:
+1. `homework01(ArraysFunctions)` — 
+2. `homework01(name)`
+3. `homework01(name)`
