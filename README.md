@@ -9,6 +9,6 @@ Welcome to the **01_array** branch. This environment is dedicated to the first c
 
 ## 🗂️ Completed Assignments
 All tasks are placed directly in the root of this branch and numbered sequentially for easy tracking:
-1. `homework01(ArraysFunctions)` — 
-2. `homework01(name)`
-3. `homework01(name)`
+1. `homework01(ArraysFunctions)`
+2. `homework02(name)`
+3. `homework03(name)`
