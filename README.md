@@ -1,11 +1,11 @@
-# 📝 Homework Branch - Assignment Log
+# 📊 Branch: 01_array - Foundational Review
 
-Welcome to the **Homework** branch of this repository. This dedicated environment is used exclusively for tracking and submitting home-based assignments and standalone exercises for the **Data Structures and Algorithms II** course at **UAO**.
+Welcome to the **01_array** branch. This environment is dedicated to the first core module of the **Data Structures and Algorithms II** course at **UAO**, focusing on array manipulation, memory allocation basics, and data structures warm-up.
 
 ## 🎯 Branch Objectives
-* **Isolate Assignments:** Keep graded home exercises completely separate from the stable production code.
-* **Chronological Tracking:** Maintain a clean, flat list of standalone files or tasks assigned during the semester.
-* **Quick Code Validation:** Allow fast review and testing of independent algorithmic challenges.
+* **Isolate Array Challenges:** Keep initial vector operations and basic algorithmic challenges separate from advanced structures.
+* **Practice Core Logic:** Master contiguous memory layouts, indexing techniques, and time complexity analysis for array-based systems.
+* **Flat File Tracking:** All exercises and standalone tasks for this module are placed directly in the root folder, numbered sequentially.
 
 ## 🗂️ Completed Assignments
 All tasks are placed directly in the root of this branch and numbered sequentially for easy tracking:
