@@ -1,0 +1,13 @@
+<div class="contact-list">
+  @if (contacts.length === 0) {
+    <p class="empty-message">No hay contactos disponibles.</p>
+  } @else {
+    @for (contact of contacts; track contact; let i = $index) {
+      <app-contact-item
+        [name]="contact.name"
+        [phone]="contact.phone"
+        (deleteContact)="onDelete(i)"
+      ></app-contact-item>
+    }
+  }
+</div>

@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="container">
+    <h1>Challenge 02: Agenda de Contactos</h1>
+
+    @if (isLoading()) {
+      <app-contacts-loader></app-contacts-loader>
+    } @else {
+      <app-contact-form (addContact)="addContact($event)"></app-contact-form>
+      <app-contact-list
+        [contacts]="contacts()"
+        (deleteContact)="deleteContact($event)"
+      ></app-contact-list>
+    }
+  </div>
+</main>

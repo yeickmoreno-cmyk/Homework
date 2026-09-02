@@ -1,0 +1,20 @@
+.main {
+    font-family: "Calibri", sans-serif, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    background: #f5f5f5;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 32px;
+    font-size: 24px;
+}
