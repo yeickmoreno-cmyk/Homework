@@ -1,0 +1,64 @@
+<div class="contenedor">
+  <h1>Sistema de Gestión Clinica</h1>
+
+  <!-- Medico de guardia -->
+  <section>
+    <h2>Médico de Guardia (Lista Circular)</h2>
+    @if (medicoGuardia()) {
+      <p class="destacado">{{ medicoGuardia().nombre }} - {{ medicoGuardia().especialidad }}</p>
+    }
+    <small>Medico guardia rota cada 10 segundos</small>
+  </section>
+
+  <hr>
+
+  <!-- Pacientes en espera -->
+  <section>
+    <h2>Pacientes en Espera (Lista Simple)</h2>
+
+    <input [(ngModel)]="nombrePaciente" placeholder="Nombre del paciente">
+    <input [(ngModel)]="motivoPaciente" placeholder="Motivo de consulta">
+    <button (click)="agregarPaciente()">Add paciente</button>
+
+    <ul>
+      @for (p of pacientes(); track p.id) {
+        <li>#{{ p.id }} - {{ p.nombre }} ({{ p.motivo }})</li>
+      } @empty {
+        <li>No hay pacientes en espera.</li>
+      }
+    </ul>
+
+    <button (click)="atenderPaciente()" [disabled]="pacientes().length === 0">
+      Atender siguiente paciente
+    </button>
+  </section>
+
+  <hr>
+
+  <!-- Historial -->
+  <section>
+    <h2>Historial de Atención (Lista Doblemente Enlazada)</h2>
+    <ul>
+      @for (h of historialArray(); track h.id) {
+        <li>{{ h.nombre }} - atendido por {{ h.medico }}</li>
+      } @empty {
+        <li>Aún no se ha atendido a nadie.</li>
+      }
+    </ul>
+  </section>
+
+  <hr>
+
+  <!-- Comite administrativo -->
+  <section>
+    <h2>Comité Administrativo (Lista Circular Doble)</h2>
+    <button (click)="retrocederComite()">⟵ Anterior</button>
+    <button (click)="avanzarComite()">Siguiente ⟶</button>
+
+    <ul>
+      @for (miembro of comiteArray(); track miembro.nombre) {
+        <li>{{ miembro.nombre }} - {{ miembro.cargo }}</li>
+      }
+    </ul>
+  </section>
+</div>
