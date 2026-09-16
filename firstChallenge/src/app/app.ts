@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router'; 
+import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -11,31 +11,31 @@ import { FormsModule } from '@angular/forms';
 })
 export class App {
 
-  //input
   numeroIngresado: number | null = null;
+  resultado: string = ''; // Guardará el mensaje para la pantalla
 
-  //Regular Function
+  // 1. Regular Function
   evaluarRegular(numero: number | null): void {
     if (numero === null || isNaN(numero)) {
-      console.log('[Regular Function] Ingresa un número válido.');
+      this.resultado = 'Por favor, ingresa un número válido.';
       return;
     }
 
     if (numero % 2 === 0) {
-      console.log(`[Regular Function] El número ${numero} es PAR (Even)`);
+      this.resultado = `[Regular Function] El número ${numero} es PAR (Even)`;
     } else {
-      console.log(`[Regular Function] El número ${numero} es IMPAR (Odd)`);
+      this.resultado = `[Regular Function] El número ${numero} es IMPAR (Odd)`;
     }
   }
 
-  //Arrow Function
+  // 2. Arrow Function
   evaluarArrow = (numero: number | null): void => {
     if (numero === null || isNaN(numero)) {
-      console.log('[Arrow Function] Ingresa un número válido.');
+      this.resultado = 'Por favor, ingresa un número válido.';
       return;
     }
 
     const tipo = numero % 2 === 0 ? 'PAR (Even)' : 'IMPAR (Odd)';
-    console.log(`[Arrow Function] El número ${numero} es ${tipo}`);
+    this.resultado = `[Arrow Function] El número ${numero} es ${tipo}`;
   };
 }

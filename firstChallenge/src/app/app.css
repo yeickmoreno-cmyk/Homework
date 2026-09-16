@@ -71,7 +71,6 @@ button:active {
   transform: scale(0.98);
 }
 
-/* Botón 1: Regular Function */
 .btn-regular {
   background-color: #0f172a;
   color: #ffffff;
@@ -80,7 +79,6 @@ button:active {
 .btn-regular:hover {
   background-color: #334155;
 }
-
 
 .btn-arrow {
   background-color: #2563eb;
@@ -91,7 +89,6 @@ button:active {
   background-color: #1d4ed8;
 }
 
-
 .note {
   margin-top: 1.5rem;
   font-size: 0.85rem;
@@ -99,4 +96,16 @@ button:active {
   text-align: center;
   border-top: 1px solid #f1f5f9;
   padding-top: 1rem;
+}
+
+.result-card {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #f1f5f9;
+  border-bottom: 4px solid blue;
+  border-radius: 6px;
+  color: #0f172a;
+  font-weight: 600;
+  text-align: center;
+  font-size: 0.95rem;
 }
