@@ -1,20 +1,59 @@
-# Homework
-# Data Structures and Algorithms II - Course Portfolio
+# FirstChallenge
 
-Welcome to my repository for **Estructura de Datos y Algoritmos II** (Data Structures and Algorithms II), a core course in the **Informatics Engineering** program at **Universidad Autónoma de Occidente (UAO)**. Under the guidance of Professor **Jonathan López Londoño**, this portfolio serves as a centralized log for all my academic assignments, algorithmic challenges, and full-stack software developments.
+This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
 
-## 📌 Course Roadmap
-The curriculum bridges advanced algorithmic structures with modern full-stack architectures through six key modules:
-* **JS & React Review:** Advanced JavaScript mechanisms and component bases.
-* **Linear Structures:** Implementation of custom Lists, Stacks, and Queues.
-* **Trees & Heaps:** Hierarchical data handling using Binary Trees, N-ary Trees, and Heaps.
-* **Hash Tables & Tries:** Optimizing data lookup, mapping, and prefix indexing.
-* **Graphs:** Modeling complex networked relations and traversal algorithms.
-* **Full-Stack Architecture:** Integration of real-time messaging, secure databases, and APIs.
+## Development server
 
-## 🛠️ Tech Stack & Architecture
-Projects are built following a multi-tier Full-Stack architecture:
-* **Frontend:** Angular,React, HTML5, CSS3, and modern JavaScript (ES6+).
-* **Backend & Real-Time:** Node.js, REST APIs, and WebSockets via Socket.io.
-* **Database:** MongoDB for persistent document-oriented storage.
-* **Development Tools:** Visual Studio Code, Git, and Postman.
+To start a local development server, run:
+
+```bash
+ng serve
+```
+
+Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+
+## Code scaffolding
+
+Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+
+```bash
+ng generate component component-name
+```
+
+For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+
+```bash
+ng generate --help
+```
+
+## Building
+
+To build the project run:
+
+```bash
+ng build
+```
+
+This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Running unit tests
+
+To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+
+```bash
+ng test
+```
+
+## Running end-to-end tests
+
+For end-to-end (e2e) testing, run:
+
+```bash
+ng e2e
+```
+
+Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+
+## Additional Resources
+
+For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
