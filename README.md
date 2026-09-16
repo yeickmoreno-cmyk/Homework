@@ -1,59 +1,18 @@
-# FirstChallenge
+En JavaScript/TypeScript, las Regular Functions (funciones tradicionales) y las Arrow Functions (funciones flecha introducidas en ES6) difieren principalmente en la sintaxis, el manejo del contexto this, y cómo se gestionan como constructores.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.1.8.
+Sintaxis: Las Arrow Functions ofrecen una estructura más limpia y concisa. Permiten retornos implícitos en expresiones de una sola línea.
 
-## Development server
+Contexto de this (Lexical Binding): Las Regular Functions definen su propio valor de this dinámicamente según cómo son invocadas. En cambio, las Arrow Functions no tienen su propio this; heredan el this del ámbito (scope) donde fueron creadas. En Angular, esto es súper útil para evitar perder la referencia a la clase dentro de un callback.
 
-To start a local development server, run:
+Constructores: Las Regular Functions pueden usarse como constructores mediante la palabra clave new. Las Arrow Functions no pueden ser usadas como constructores y lanzarán un error si lo intentas.
 
-```bash
-ng serve
-```
+Objeto arguments: Las Regular Functions tienen acceso directo al objeto arguments para ver los parámetros recibidos. Las Arrow Functions no lo poseen (se suele usar el operador rest ...args en su lugar).
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+| Característica | Regular Function | Arrow Function |
+| :--- | :--- | :--- |
+| **Sintaxis** | `function miFuncion() {}` | `const miFuncion = () => {}` |
+| **Contexto `this`** | Dinámico (se define al momento de la ejecución). | Léxico (hereda el `this` del contexto donde se define). |
+| **Uso como Constructor** | Sí (se puede usar `new`). | No (lanza error al usar `new`). |
+| **Objeto `arguments`** | Disponible nativamente. | No disponible (requiere *Rest Parameters* `...args`). |
+| **Elevación (Hoisting)** | Sí (si se declara como `function nombre()`). | No (sigue las reglas de `const` / `let`). |
+| **Uso común en Angular** | Métodos principales de la clase de un componente. | Callbacks, suscripciones a Observables (RxJS) y eventos. |
