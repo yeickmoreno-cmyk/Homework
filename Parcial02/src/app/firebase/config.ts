@@ -20,13 +20,10 @@ const firebaseConfig = {
   measurementId: "G-NDBV0WT0BK"
 };
 
-// 2. SE INICIALIZA LA APP BASE CON LA CONFIGURACIÓN
 const app = initializeApp(firebaseConfig);
 
-// 3. SE GENERAN LOS SERVICIOS DEPENDIENDO DE LA APP
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// 4. SE EXPORTAN LAS INSTANCIAS UNIFICADAS
 export { analytics, auth, db };

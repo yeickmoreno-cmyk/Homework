@@ -1,6 +1,6 @@
 export type NodeType = 'folder' | 'file';
 
-/** Documento tal como se guarda en Firestore (colección plana, enlazada por parentId). */
+/*Documento tal como se guarda en Firestore (colección plana, enlazada por parentId). */
 export interface FsItem {
   id?: string;
   name: string;
@@ -57,7 +57,7 @@ export class TreeNode {
   }
 }
 
-/** Reconstruye el árbol completo a partir de la lista plana guardada en BD. */
+/** Reconstruye el árbol completo con base a lista en BD. */
 export function buildTree(items: FsItem[]): TreeNode {
   const root = new TreeNode({ name: '/', type: 'folder', parentId: null, ownerEmail: '' });
   const map = new Map(items.map(i => [i.id!, new TreeNode(i)]));
