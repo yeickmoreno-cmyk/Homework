@@ -1,0 +1,53 @@
+<div class="app">
+  <aside class="panel">
+    <h1>Árbol Binario<br />de Búsqueda</h1>
+
+    <section class="card">
+      <label for="insert">Insertar valor</label>
+      <div class="row">
+        <input id="insert" type="number" [(ngModel)]="newValue"
+               (keyup.enter)="addValue()" placeholder="Ej: 55" />
+        <button class="btn primary" (click)="addValue()">Insertar</button>
+      </div>
+        @if (insertMessage) {
+        <p class="result" [class.ok]="insertOk" [class.warn]="!insertOk">
+          {{ insertMessage }}
+        </p>
+      }
+    </section>
+
+    <section class="card">
+      <label for="search">Buscar valor</label>
+      <div class="row">
+        <input id="search" type="number" [(ngModel)]="searchValue"
+               (keyup.enter)="search()" placeholder="Ej: 40" />
+        <button class="btn" (click)="search()">Buscar</button>
+      </div>
+      @if (searchResult) {
+        <p class="result" [class.ok]="found" [class.fail]="!found">
+          {{ searchResult }}
+        </p>
+      }
+    </section>
+
+    <section class="card">
+      <label>Recorridos</label>
+      <div class="traversal">
+        <span class="tag">InOrder</span>
+        <code>{{ inOrderText }}</code>
+      </div>
+      <div class="traversal">
+        <span class="tag">PreOrder</span>
+        <code>{{ preOrderText }}</code>
+      </div>
+      <div class="traversal">
+        <span class="tag">PostOrder</span>
+        <code>{{ postOrderText }}</code>
+      </div>
+    </section>
+  </aside>
+
+  <main class="canvas">
+    <div #treeContainer class="tree-container"></div>
+  </main>
+</div>

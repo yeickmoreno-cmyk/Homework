@@ -1,0 +1,19 @@
+<nav class="navbar">
+  <a routerLink="/inicio" routerLinkActive="active">Inicio</a>
+
+  @if (auth.isLoggedIn()) {
+    <a routerLink="/ejercicio1" routerLinkActive="active">Ejercicio 1 (Sidebar with Tree)</a>
+    <a routerLink="/ejercicio2" routerLinkActive="active">Ejercicio 2 (Just Tree)</a>
+
+    <span class="spacer"></span>
+    <span class="user">👤 {{ auth.username() }} ({{ auth.email() }})</span>
+    <button class="danger" (click)="logout()">Logout</button>
+  } @else {
+    <span class="spacer"></span>
+    <a routerLink="/login" routerLinkActive="active">Login</a>
+  }
+</nav>
+
+<main>
+  <router-outlet />
+</main>
