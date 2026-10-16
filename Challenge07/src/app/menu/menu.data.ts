@@ -1,3 +1,5 @@
+
+//YJ 
 import { MenuNode } from './menu-node';
 import { Profile } from '../pages/profile/profile';
 import { Messages } from '../pages/messages/messages';
@@ -27,7 +29,7 @@ const help = new MenuNode('Help', '/help', Help, true)
   .addChild(new MenuNode('Submit a Ticket', '/help/submit-a-ticket', SubmitTicket))
   .addChild(new MenuNode('Network Status', '/help/network-status', NetworkStatus));
 
-// Raíz del árbol (no se dibuja, solo agrupa)
+// Root del arbol
 export const menuTree = new MenuNode('root', '')
   .addChild(new MenuNode('Profile', '/profile', Profile))
   .addChild(new MenuNode('Messages', '/messages', Messages))
