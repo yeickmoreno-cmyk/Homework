@@ -1,0 +1,22 @@
+@if (node.hasChildren()) {
+  <div class="item group" (click)="toggle()">
+    <span>{{ node.title }}</span>
+    <span class="chevron" [class.closed]="!open()">▲</span>
+  </div>
+
+  @if (open()) {
+    <div class="children">
+      @for (child of node.children; track child.title) {
+        <app-menu-item [node]="child" [level]="level + 1" />
+      }
+    </div>
+  }
+} @else {
+  <a class="item"
+     [class.child]="level > 0"
+     [class.footer]="node.footer"
+     [routerLink]="node.link"
+     routerLinkActive="active">
+    {{ node.title }}
+  </a>
+}
