@@ -35,7 +35,7 @@ export class TreeViewComponent implements AfterViewInit {
     this.drawTree();
   }
 
-  // ---------- Punto 1: imprimir en consola ----------
+  // imprimir en consola 
    printTraversals(): void {
     this.inOrderText = this.tree.inOrder().join(' - ');
     this.preOrderText = this.tree.preOrder().join(' - ');
@@ -46,7 +46,7 @@ export class TreeViewComponent implements AfterViewInit {
     console.log('PreOrder  :', this.preOrderText);
   }
 
-  // ---------- Insertar desde la UI ----------
+  // Insertar desde la UI 
    addValue(): void {
     if (this.newValue === null) return;
 
@@ -65,10 +65,10 @@ export class TreeViewComponent implements AfterViewInit {
     this.newValue = null;
     this.printTraversals();
 
-    // Si ya existía, resalta ese nodo en el árbol
+    // Si ya existe, resalta en el arbol
     this.drawTree(inserted ? null : value);
   }
-  // ---------- Punto 2: buscar ----------
+  // Buscar 
     search(): void {
     if (this.searchValue === null) return;
     this.found = this.tree.contains(this.searchValue);
@@ -79,7 +79,7 @@ export class TreeViewComponent implements AfterViewInit {
     this.drawTree(this.found ? this.searchValue : null);
   }
 
-  // ---------- Punto 3: dibujar con d3 ----------
+  // Dibujar con d3 
   drawTree(highlight: number | null = null): void {
     const data = this.tree.toHierarchy();
     const host = this.container.nativeElement;
@@ -107,7 +107,7 @@ export class TreeViewComponent implements AfterViewInit {
       ]);
     layout(root);
 
-    // Enlaces (líneas)
+    // Enlaces (lineas)
     g.selectAll('path.link')
       .data(root.links())
       .join('path')
