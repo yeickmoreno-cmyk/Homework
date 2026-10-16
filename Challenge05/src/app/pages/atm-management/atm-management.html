@@ -1,0 +1,48 @@
+<div class="page-container">
+  
+  <!-- FORMULARIO DE REGISTRO (Punto 3) -->
+  <div class="card form-card">
+    <h2 class="title-form">Registro para Cajero (Enqueue)</h2>
+    <form (ngSubmit)="addPerson()">
+      <div class="form-group">
+        <label>Nombre de la Persona:</label>
+        <input type="text" [(ngModel)]="newPerson.name" name="name" placeholder="Ej: Ana López" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Monto a Retirar ($):</label>
+        <input type="number" [(ngModel)]="newPerson.withdrawalAmount" name="withdrawalAmount" placeholder="Ej: 200000" min="1" required>
+      </div>
+
+      <button type="submit" class="btn-enqueue">
+        Entrar a la Fila
+      </button>
+    </form>
+  </div>
+
+  <!-- IMPRESIÓN DE LA COLA POR FECHA DE LLEGADA (Punto 4) -->
+  <div class="card queue-card">
+    <div class="queue-header">
+      <h2 class="title-queue">Fila del Cajero (Queue - FIFO)</h2>
+      <button class="btn-dequeue" (click)="attendPerson()" [disabled]="atmQueue.isEmpty()">
+        Atender Siguiente 🏧
+      </button>
+    </div>
+
+    <div class="queue-list">
+      @for (person of peopleList; track person.arrivalDate.getTime(); let i = $index) {
+        <div class="person-item">
+          @if (i === 0) {
+            <span class="badge-front">PRIMERO EN FILA</span>
+          }
+          <h3>👤 {{ person.name }}</h3>
+          <p><strong>Monto a retirar:</strong> ${{ person.withdrawalAmount.toLocaleString() }}</p>
+          <p><strong>Hora de Llegada:</strong> {{ person.arrivalDate | date:'mediumTime' }}</p>
+        </div>
+      } @empty {
+        <p class="empty-msg">No hay personas esperando en el cajero.</p>
+      }
+    </div>
+  </div>
+
+</div>
