@@ -47,8 +47,6 @@ export class BinaryTree {
     }
   }
 
-  // ---------- Recorridos (recursivos) ----------
-
   // N - L - R
   preOrder(node: TreeNode | null = this.root, result: number[] = []): number[] {
     if (node) {
@@ -79,7 +77,7 @@ export class BinaryTree {
     return result;
   }
 
-  // ---------- Búsqueda (punto 2) ----------
+  // Buscar
   contains(value: number): boolean {
     let current = this.root;
     while (current !== null) {
@@ -89,7 +87,7 @@ export class BinaryTree {
     return false;
   }
 
-  // ---------- Conversión para d3 (punto 3) ----------
+  // convertir a d3
   toHierarchy(): HierarchyData | null {
     const convert = (node: TreeNode | null): HierarchyData | null => {
       if (!node) return null;
