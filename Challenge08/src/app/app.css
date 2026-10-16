@@ -1,0 +1,50 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--surface);
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+
+.navbar a {
+  color: var(--text-secondary);
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.navbar a:hover {
+  background: var(--fill);
+  color: var(--text);
+  text-decoration: none;
+}
+.navbar a.active {
+  background: var(--fill);
+  color: var(--text);
+}
+
+.spacer { flex: 1; }
+
+.user {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  margin-right: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  background: var(--fill);
+  border-radius: 999px;
+}
+
+main {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem 1.25rem;
+}

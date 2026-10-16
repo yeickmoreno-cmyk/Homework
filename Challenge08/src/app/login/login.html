@@ -1,0 +1,23 @@
+<div class="login-card">
+  <h2>Login</h2>
+
+  @if (auth.isLoggedIn()) {
+    <p>Ya has iniciado sesión como <strong>{{ auth.username() }}</strong>.</p>
+  } @else {
+    <label>
+      Email
+      <input type="email" [(ngModel)]="email" placeholder="user@mail.com" />
+    </label>
+
+    <label>
+      Password
+      <input type="password" [(ngModel)]="password" placeholder="123" />
+    </label>
+
+    <button class="primary" (click)="onLogin()">Login</button>
+
+    @if (error()) {
+      <p class="error">{{ error() }}</p>
+    }
+  }
+</div>
