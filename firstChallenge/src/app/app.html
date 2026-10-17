@@ -1,0 +1,31 @@
+<main class="container">
+  <h1>Reto: Arrow vs Regular Functions</h1>
+
+  <div class="form-group">
+    <label for="inputNumero">Ingresa un número:</label>
+    <input
+      id="inputNumero"
+      type="number"
+      [(ngModel)]="numeroIngresado"
+      placeholder="Ejemplo: 8"
+    />
+  </div>
+
+  <div class="button-group">
+    <button class="btn-regular" (click)="evaluarRegular(numeroIngresado)">
+      Regular Function
+    </button>
+    <button class="btn-arrow" (click)="evaluarArrow(numeroIngresado)">
+      Arrow Function
+    </button>
+  </div>
+
+  <!-- Resultado visible en pantalla -->
+  @if (resultado) {
+    <div class="result-card">
+      {{ resultado }}
+    </div>
+  }
+</main>
+
+<router-outlet></router-outlet>

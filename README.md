@@ -1,20 +1,18 @@
-# Homework
-# Data Structures and Algorithms II - Course Portfolio
+En JavaScript/TypeScript, las Regular Functions (funciones tradicionales) y las Arrow Functions (funciones flecha introducidas en ES6) difieren principalmente en la sintaxis, el manejo del contexto this, y cómo se gestionan como constructores.
 
-Welcome to my repository for **Estructura de Datos y Algoritmos II** (Data Structures and Algorithms II), a core course in the **Informatics Engineering** program at **Universidad Autónoma de Occidente (UAO)**. Under the guidance of Professor **Jonathan López Londoño**, this portfolio serves as a centralized log for all my academic assignments, algorithmic challenges, and full-stack software developments.
+Sintaxis: Las Arrow Functions ofrecen una estructura más limpia y concisa. Permiten retornos implícitos en expresiones de una sola línea.
 
-## 📌 Course Roadmap
-The curriculum bridges advanced algorithmic structures with modern full-stack architectures through six key modules:
-* **JS & React Review:** Advanced JavaScript mechanisms and component bases.
-* **Linear Structures:** Implementation of custom Lists, Stacks, and Queues.
-* **Trees & Heaps:** Hierarchical data handling using Binary Trees, N-ary Trees, and Heaps.
-* **Hash Tables & Tries:** Optimizing data lookup, mapping, and prefix indexing.
-* **Graphs:** Modeling complex networked relations and traversal algorithms.
-* **Full-Stack Architecture:** Integration of real-time messaging, secure databases, and APIs.
+Contexto de this (Lexical Binding): Las Regular Functions definen su propio valor de this dinámicamente según cómo son invocadas. En cambio, las Arrow Functions no tienen su propio this; heredan el this del ámbito (scope) donde fueron creadas. En Angular, esto es súper útil para evitar perder la referencia a la clase dentro de un callback.
 
-## 🛠️ Tech Stack & Architecture
-Projects are built following a multi-tier Full-Stack architecture:
-* **Frontend:** Angular,React, HTML5, CSS3, and modern JavaScript (ES6+).
-* **Backend & Real-Time:** Node.js, REST APIs, and WebSockets via Socket.io.
-* **Database:** MongoDB for persistent document-oriented storage.
-* **Development Tools:** Visual Studio Code, Git, and Postman.
+Constructores: Las Regular Functions pueden usarse como constructores mediante la palabra clave new. Las Arrow Functions no pueden ser usadas como constructores y lanzarán un error si lo intentas.
+
+Objeto arguments: Las Regular Functions tienen acceso directo al objeto arguments para ver los parámetros recibidos. Las Arrow Functions no lo poseen (se suele usar el operador rest ...args en su lugar).
+
+| Característica | Regular Function | Arrow Function |
+| :--- | :--- | :--- |
+| **Sintaxis** | `function miFuncion() {}` | `const miFuncion = () => {}` |
+| **Contexto `this`** | Dinámico (se define al momento de la ejecución). | Léxico (hereda el `this` del contexto donde se define). |
+| **Uso como Constructor** | Sí (se puede usar `new`). | No (lanza error al usar `new`). |
+| **Objeto `arguments`** | Disponible nativamente. | No disponible (requiere *Rest Parameters* `...args`). |
+| **Elevación (Hoisting)** | Sí (si se declara como `function nombre()`). | No (sigue las reglas de `const` / `let`). |
+| **Uso común en Angular** | Métodos principales de la clase de un componente. | Callbacks, suscripciones a Observables (RxJS) y eventos. |
