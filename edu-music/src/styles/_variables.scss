@@ -1,0 +1,26 @@
+// Variables (paleta simplificada: neutros + un solo acento)
+$bg: #0e0e11;
+$surface: #17171b;
+$surface-2: #1f1f24;
+$hover: rgba(255, 255, 255, 0.06);
+$press: rgba(255, 255, 255, 0.12);
+$line: rgba(255, 255, 255, 0.08);
+$text: #f4f4f5;
+$muted: #9a9aa2;
+
+$brand: #ff2d4a;
+$brand-press: #d11f3a;
+$accent-soft: rgba(255, 45, 74, 0.14); // fondo suave del acento
+$danger: #ff6b6b;
+
+$radius: 14px;
+$radius-sm: 8px;
+$space: 8px;
+$sidebar-width: 280px;
+$queue-width: 340px;
+$topbar-h: 64px;
+$player-h: 88px;
+$font: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Segoe UI', Roboto, sans-serif;
+$breakpoints: (sm: 640px, md: 980px);
+// Ranking: el podio se distingue solo con tonos del acento
+$medals: (1: $brand, 2: #c9c9cf, 3: #8e8e96);

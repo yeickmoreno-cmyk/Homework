@@ -1,0 +1,125 @@
+@use 'variables' as *;
+@use 'functions' as *;
+@use 'mixins' as *;
+
+// ---------- Botones ----------
+.btn { @include btn; &.white { background: #fff; color: #000; &:hover { background: #e4e4e7; } }
+  &.outline { background: transparent; color: $text; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.28); &:hover { background: $hover; } }
+  &.small { height: 34px; padding: 0 space(2); font-size: 0.875rem; } &.block { width: 100%; } }
+.icon-btn { @include icon-btn; &.small { width: 28px; height: 28px; } &.big { width: 44px; height: 44px; } }
+.play-btn { width: 40px; height: 40px; border-radius: 50%; border: 0; background: #fff; color: #000; display: grid; place-items: center; cursor: pointer;
+  transition: transform 0.1s; &:hover { transform: scale(1.05); } &:active { transform: scale(0.95); } &:focus-visible { outline: 2px solid $brand; outline-offset: 3px; } }
+.spinner { width: 18px; height: 18px; border: 3px solid rgba(255, 255, 255, 0.25); border-top-color: #fff; border-radius: 50%; animation: spin 0.7s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.avatar { width: 38px; height: 38px; border-radius: 50%; border: 0; cursor: pointer; background: $surface-2; color: $text; font-weight: 700;
+  box-shadow: 0 0 0 1px $line; &:hover { background: $press; } }
+.menu { position: absolute; right: 0; top: 50px; z-index: 40; width: 220px; padding: space(1); @include surface($surface-2);
+  button { @include flex-center(1); width: 100%; background: transparent; border: 0; color: $text; padding: space(1.5); border-radius: $radius-sm; cursor: pointer; font-size: 0.95rem;
+    &:hover { background: $hover; } &:active { background: $press; } } }
+
+// ---------- Campos ----------
+.field { width: 100%; height: 46px; background: transparent; color: $text; border: 1px solid rgba(255, 255, 255, 0.2); border-radius: $radius-sm; padding: 0 space(1.5); font-size: 1rem; font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s; &:hover { border-color: rgba(255, 255, 255, 0.4); } &:focus { outline: none; border-color: $brand; box-shadow: 0 0 0 3px $accent-soft; } }
+label.lbl { display: block; font-weight: 600; font-size: 0.9rem; margin: space(2) 0 space(1); }
+.search { @include flex-center(1); flex: 1; height: 44px; padding: 0 space(1.5); border-radius: 999px; background: $surface; color: $muted;
+  border: 1px solid $line; transition: 0.15s; &:hover { border-color: rgba(255, 255, 255, 0.2); }
+  &:focus-within { border-color: $brand; color: $text; }
+  input { flex: 1; min-width: 0; background: transparent; border: 0; color: $text; font-size: 1rem; outline: none; font-family: inherit; } }
+.select { height: 44px; background: $surface-2; color: $text; border: 1px solid $line; border-radius: $radius-sm; padding: 0 space(1.5); width: 100%; font-family: inherit; }
+
+// ---------- Login ----------
+.brand-name { font-weight: 700; font-size: 0.9rem; color: $text; }
+.logo-img { display: block; object-fit: contain; }
+.auth-page { height: 100vh; display: grid; place-items: center; padding: space(2); overflow: auto;
+  .auth-card { @include surface; width: min(420px, 100%); padding: space(5) space(4) space(4); text-align: center;
+    h1 { font-size: 2rem; margin: space(2) 0 space(1); font-weight: 700; }
+    .lbl, .field-wrap { text-align: left; }
+    .logo { width: 72px; height: 72px; }
+    .company { font-weight: 600; color: $muted; font-size: 0.85rem; }
+    .hint { margin-top: space(3); padding: space(1.5); border-radius: $radius-sm; background: $hover; font-size: 0.85rem; color: $muted; }
+    .or { margin: space(2) 0; display: flex; align-items: center; gap: space(2); color: $muted; &::before, &::after { content: ''; flex: 1; height: 1px; background: $line; } }
+    .chip { @include flex-center(1); justify-content: space-between; background: $hover; border-radius: 999px; padding: 6px space(2); margin-bottom: space(1); text-align: left; }
+    .pw { position: relative; .icon-btn { position: absolute; right: 6px; top: 5px; } }
+    .error { color: $danger; text-align: left; font-size: 0.9rem; margin: space(1) 0 0; }
+    .btn + .btn { margin-top: space(1.5); } .btn.primary { margin-top: space(3); } } }
+.error { color: $danger; } .ok { color: $brand; }
+
+// ---------- Contenido ----------
+.page { display: flex; flex-direction: column; gap: space(3); }
+.greet { font-size: 1.8rem; font-weight: 700; }
+.segmented { display: inline-flex; flex-wrap: wrap; gap: 4px; align-self: flex-start;
+  button { border: 1px solid $line; background: transparent; color: $muted; padding: 6px space(2); border-radius: 999px; cursor: pointer; font-size: 0.875rem; transition: 0.15s;
+    &:hover { background: $hover; color: $text; }
+    &.sel { background: $text; border-color: $text; color: #000; font-weight: 600; } } }
+.shelf h2 { margin-bottom: space(2); font-size: 1.3rem; }
+.tiles { display: grid; gap: space(2); grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+
+.cover { display: grid; place-items: center; flex: none; border-radius: 6px; color: rgba(255, 255, 255, 0.7); font-weight: 700; overflow: hidden;
+  img { width: 100%; height: 100%; object-fit: cover; } }
+
+.tile-card { position: relative; padding: space(1.5); border-radius: $radius-sm; background: $surface; border: 1px solid $line; transition: background 0.15s; cursor: pointer;
+  &:hover { background: $surface-2; .fab { opacity: 1; } }
+  .cover { width: 100%; aspect-ratio: 1; font-size: 2.6rem; border-radius: 6px; }
+  strong { display: block; margin-top: space(1.5); @include truncate; } small { display: block; @include truncate; }
+  .fab { position: absolute; right: space(2.5); top: calc(100% - 92px); opacity: 0; transition: opacity 0.15s; width: 42px; height: 42px; border-radius: 50%; border: 0; background: $brand; color: #fff; display: grid; place-items: center; cursor: pointer;
+    &:hover { background: $brand-press; } }
+  &.active strong { color: $brand; } }
+
+.row { @include flex-center(2); padding: space(1) space(1.5); border-radius: $radius-sm; transition: background 0.15s;
+  &:hover { background: $hover; .num { display: none; } .row-play { display: grid; } .row-actions { opacity: 1; } }
+  .lead { width: 34px; display: grid; place-items: center; color: $muted; }
+  .row-play { display: none; } .num { font-variant-numeric: tabular-nums; }
+  .info { flex: 1; min-width: 0; strong, small { display: block; @include truncate; } }
+  .plays { color: $muted; font-variant-numeric: tabular-nums; font-size: 0.9rem; }
+  .row-actions { opacity: 0.55; transition: 0.15s; @include flex-center(0.5); }
+  &.active .info strong { color: $brand; } }
+
+.panel { padding: space(3); @include surface; }
+.grid-2 { display: grid; gap: space(3); grid-template-columns: 1fr 1fr; @include respond(md) { grid-template-columns: 1fr; } }
+.badge { background: $hover; border-radius: 999px; padding: 2px space(1); font-size: 0.75rem; color: $muted; }
+.stat-grid { display: grid; gap: space(2); grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.stat { @extend .panel; strong { display: block; font-size: 1.6rem; color: $text; margin-bottom: 4px; } }
+table { width: 100%; border-collapse: collapse; th, td { padding: space(1); text-align: left; border-bottom: 1px solid $line; } }
+
+// ---------- Ranking ----------
+.rank-row { @include flex-center(2); margin-bottom: space(1.5);
+  .rank { width: 40px; font-weight: 700; font-size: 1.1rem; color: $muted; font-variant-numeric: tabular-nums; }
+  .name { width: 220px; @include truncate; @include respond(sm) { width: 110px; } }
+  .track { flex: 1; background: $hover; border-radius: 999px; }
+  .bar { @include rank-bar($muted); width: 0; opacity: 0.55; }
+  .value { width: 70px; text-align: right; font-variant-numeric: tabular-nums; color: $muted; } }
+@each $pos, $color in $medals { .rank-row.pos-#{$pos} { .rank { color: $color; } .bar { @include rank-bar($color); opacity: 1; } } }
+@for $i from 1 through 15 { .rank-row:nth-child(#{$i}) .bar { transition-delay: $i * 30ms; } }
+
+.graph { width: 100%; background: $surface; border-radius: $radius; border: 1px solid $line;
+  .edge { stroke: rgba(255, 255, 255, 0.18); } text { fill: $text; font-size: 10px; pointer-events: none; }
+  .node.selected circle { stroke: #fff; stroke-width: 3; } .node.related circle { stroke: $brand; stroke-width: 3; } }
+.cover-big { width: 220px; height: 220px; border-radius: $radius-sm; }
+
+// ---------- Reproductor ----------
+.player-bar { height: 100%; display: grid; grid-template-columns: 1fr minmax(320px, 620px) 1fr; align-items: center; padding: 0 space(2); gap: space(2); @include respond(md) { grid-template-columns: 1fr auto; .extra .vol { display: none; } }
+  .now { @include flex-center(1.5); min-width: 0; .meta { min-width: 0; a, small { display: block; @include truncate; } a:hover { text-decoration: underline; } } }
+  .controls { display: flex; flex-direction: column; align-items: center; gap: 2px; @include respond(md) { display: none; } }
+  .buttons { @include flex-center(1.5); }
+  .timeline { width: 100%; @include flex-center(1); small { width: 40px; text-align: center; font-variant-numeric: tabular-nums; font-size: 0.75rem; } }
+  .extra { justify-self: end; @include flex-center(1); .vol { width: 110px; } } }
+.slider { -webkit-appearance: none; appearance: none; width: 100%; height: 4px; border-radius: 99px; cursor: pointer; outline: none;
+  background: linear-gradient(to right, #fff var(--pct, 0%), rgba(255, 255, 255, 0.2) var(--pct, 0%));
+  &::-webkit-slider-thumb { -webkit-appearance: none; width: 0; height: 0; } &::-moz-range-thumb { width: 0; height: 0; border: 0; }
+  &:hover { background: linear-gradient(to right, $brand var(--pct, 0%), rgba(255, 255, 255, 0.2) var(--pct, 0%));
+    &::-webkit-slider-thumb { width: 12px; height: 12px; border-radius: 50%; background: #fff; }
+    &::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: #fff; border: 0; } } }
+
+// ---------- Cola (panel lateral que se desliza) ----------
+.queue-wrap { height: 100%; width: 0; overflow: hidden; transition: width 0.28s ease;
+  &.open { width: $queue-width; }
+  @include respond(md) { position: fixed; right: space(1); top: $topbar-h + 16px; bottom: $player-h + 16px; z-index: 20; height: auto; border-radius: $radius; } }
+.queue { width: $queue-width; height: 100%; overflow: auto; padding: space(2); @include surface;
+  header { @include flex-center(1); justify-content: space-between; margin-bottom: space(2); h2 { font-size: 1.2rem; } }
+  h3 { font-size: 0.9rem; color: $muted; font-weight: 600; margin: space(3) 0 space(1); @include flex-center(1); justify-content: space-between; }
+  .qrow { @include flex-center(1.5); padding: 6px; border-radius: $radius-sm; cursor: pointer; transition: background 0.15s;
+    &:hover { background: $hover; } &:active { background: $press; }
+    .info { flex: 1; min-width: 0; strong, small { display: block; @include truncate; } }
+    &.active strong { color: $brand; } }
+  .empty { color: $muted; font-size: 0.9rem; padding: space(1); } }
