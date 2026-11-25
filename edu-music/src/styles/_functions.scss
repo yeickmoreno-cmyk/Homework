@@ -1,0 +1,8 @@
+@use 'sass:math';
+@use 'sass:color';
+@use 'variables' as *;
+
+@function space($n) { @return $space * $n; }
+@function percent-of($value, $max) { @return math.div($value, $max) * 100%; }
+@function tint($c, $amount) { @return color.mix(white, $c, $amount); }
+@function shade($c, $amount) { @return color.mix(black, $c, $amount); }

@@ -1,0 +1,48 @@
+@use 'sass:map';
+@use 'variables' as *;
+@use 'functions' as *;
+
+// Superficie plana (sustituye al efecto cristal)
+@mixin surface($bg: $surface) {
+  background: $bg;
+  border: 1px solid $line;
+  border-radius: $radius;
+}
+@mixin flex-center($gap: 1) { display: flex; align-items: center; gap: space($gap); }
+@mixin truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@mixin respond($bp) { @media (max-width: map.get($breakpoints, $bp)) { @content; } }
+
+// Botón con estados claros: hover, presionado, foco, deshabilitado
+@mixin btn($bg: $brand, $fg: #fff) {
+  display: inline-flex; align-items: center; justify-content: center; gap: space(1);
+  background: $bg; color: $fg;
+  border: 0; border-radius: 999px;
+  padding: 0 space(3); height: 44px;
+  font: 600 0.95rem $font;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  &:hover { background: shade($bg, 8%); }
+  &:active { transform: scale(0.97); }
+  &:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+  &:disabled { opacity: 0.5; pointer-events: none; }
+}
+@mixin icon-btn($size: 36px) {
+  position: relative;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: $size; height: $size; padding: 0;
+  border: 0; border-radius: 50%;
+  background: transparent; color: $muted;
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s;
+  &:hover { color: $text; background: $hover; }
+  &:active { background: $press; }
+  &:focus-visible { outline: 2px solid $brand; outline-offset: 2px; }
+  &:disabled { opacity: 0.35; pointer-events: none; }
+  &.on { color: $brand; }
+}
+// Barra de ranking reutilizable
+@mixin rank-bar($color) {
+  height: 8px; border-radius: 999px;
+  background: $color;
+  transition: width 0.5s ease;
+}
